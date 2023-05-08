@@ -1,4 +1,4 @@
-package thymeleaf.Workshop;
+package thymeleaf.Workshop.controller;
 
 
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package thymeleaf.Workshop;
+package thymeleaf.Workshop.controller;
 
 
 import ch.qos.logback.core.model.Model;
