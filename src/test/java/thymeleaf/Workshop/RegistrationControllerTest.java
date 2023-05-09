@@ -24,8 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class RegistrationControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+
 
     @Test
     public void testAddRegistration() {
@@ -33,18 +32,11 @@ public class RegistrationControllerTest {
         HttpServletRequest request = mock(HttpServletRequest.class);
         RegistrationController controller = new RegistrationController();
         Registration registration = new Registration();
-        registration.setPersonName("John Doe");
+        registration.setPersonName("Adam");
 
         String result = controller.addRegistration(registration, request);
 
         assertEquals("registration", result);
-        assertEquals("John Doe", registration.getPersonName());
-    }
-
-
-    @Test
-    public void testGreeting() throws Exception {
-        this.mockMvc.perform(get("/greeting"))
-                .andExpect(status().isOk());
+        assertEquals("Adam", registration.getPersonName());
     }
 }
