@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     <table>
         <tr>
             <td>
-                Name:
+                <spring:message code="personName" />:
             </td>
             <td>
                 <input type="text" id="personName" name="personName" required>

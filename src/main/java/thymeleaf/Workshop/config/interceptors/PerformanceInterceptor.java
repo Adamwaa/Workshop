@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+/* Interceptor workshop performance*/
+
 @Slf4j
 public class PerformanceInterceptor implements HandlerInterceptor {
 
@@ -33,6 +35,5 @@ public class PerformanceInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        // Można użyć tej metody, aby wykonać dodatkowe działania po zakończeniu przetwarzania żądania
     }
 }
