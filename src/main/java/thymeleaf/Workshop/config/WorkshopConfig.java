@@ -54,7 +54,7 @@ public class WorkshopConfig implements WebMvcConfigurer {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/jsp/");
         viewResolver.setSuffix(".jsp");
-        viewResolver.setOrder(1);
+        viewResolver.setOrder(0);
         return viewResolver;
     }
 
@@ -64,7 +64,7 @@ public class WorkshopConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
-        templateResolver.setOrder(0);
+        templateResolver.setOrder(1);
         return templateResolver;
     }
 
@@ -80,7 +80,7 @@ public class WorkshopConfig implements WebMvcConfigurer {
     public ViewResolver thymeleafResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(springTemplateEngine());
-        viewResolver.setOrder(0);
+        viewResolver.setOrder(1);
         return viewResolver;
     }
 

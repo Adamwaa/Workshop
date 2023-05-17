@@ -1,13 +1,15 @@
 package thymeleaf.Workshop.controller;
 
 
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import thymeleaf.Workshop.model.Registration;
+
 
 @Controller
 @Slf4j
@@ -19,8 +21,13 @@ public class RegistrationController {
     }
 
     @PostMapping("registration")
-    public String addRegistration(@ModelAttribute("registration") Registration registration, HttpServletRequest request) {
-        System.out.println(   registration.getPersonName());
+    public String addRegistration(@Valid @ModelAttribute("registration") Registration registration,
+                                  BindingResult result) {
+
+        if(result.hasErrors()) {
+            log.info("BindingResult error");
+            return "registration";
+        }
         return "registration";
     }
 }
